@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Modal Style */
+.modal {
+    display: none; /* Ẩn modal theo mặc định */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: black;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Button Styles */
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"]:focus {
+    outline-color: #4CAF50;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Modal OTP -->
+<div id="otpModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeOtpModal">&times;</span>
+        <h2>Nhập mã OTP</h2>
+        <form id="otpForm">
+            <label for="otpCode">Mã OTP</label>
+            <input type="text" id="otpCode" name="otpCode" maxlength="6" placeholder="Nhập mã OTP" required>
+            <div id="otpError" style="color: red;"></div>
+            <button type="submit" id="submitOtp">Xác nhận</button>
+        </form>
+    </div>
+</div>
+
+<!-- Button để mở modal -->
+<button id="openOtpModal">Nhập OTP</button>
+
+</body>
+</html>
